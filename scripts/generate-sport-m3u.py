@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Optional
 
 EVENTS_API = "https://api.cdnlivetv.tv/api/v1/events/sports/?user=cdnlivetv&plan=free"
-OUTPUT_FILE = Path(__file__).resolve().parent.parent / "cdnlivetv.m3u"
+OUTPUT_FILE = Path(__file__).resolve().parent.parent / "SPORTS.m3u"
 MAX_WORKERS = 20
 
 HEADERS = {
