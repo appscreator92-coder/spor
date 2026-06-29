@@ -152,6 +152,37 @@ app.get('/api/channels', (req, res) => {
   }
 });
 
+// API: Get Events (from .SPORTS_EVENT.json, resolve channel names to full objects)
+app.get('/api/events', (req, res) => {
+  try {
+    const channels = parseM3U(M3U_PATH);
+    const channelMap = {};
+    for (const ch of channels) {
+      channelMap[ch.name] = ch;
+    }
+
+    const eventsPath = path.join(__dirname, 'data', '.SPORTS_EVENT.json');
+    if (!fs.existsSync(eventsPath)) {
+      return res.json({ success: true, categories: {} });
+    }
+
+    const raw = JSON.parse(fs.readFileSync(eventsPath, 'utf-8'));
+    const categories = {};
+
+    for (const [category, events] of Object.entries(raw)) {
+      if (!Array.isArray(events)) continue;
+      categories[category] = events.map(ev => ({
+        ...ev,
+        channels: (ev.channels || []).map(name => channelMap[name]).filter(Boolean),
+      })).filter(ev => ev.channels.length > 0);
+    }
+
+    res.json({ success: true, categories });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
 // API: Refresh Channels (run python script)
 app.post('/api/refresh', (req, res) => {
   console.log('[*] Refresh requested. Running python scrape script...');
@@ -260,23 +291,8 @@ if (fs.existsSync(frontendDist)) {
   });
 }
 
-// Auto-refresh M3U playlist every 30 minutes in background
-const AUTO_REFRESH_INTERVAL = 30 * 60 * 1000; // 30 minutes
-setInterval(() => {
-  console.log('[AUTO-REFRESH] Running python scrape script in background...');
-  exec(`python3 "${SCRAPE_SCRIPT_PATH}"`, (error, stdout, stderr) => {
-    if (error) {
-      console.error(`[AUTO-REFRESH ERROR] Auto-scraping failed: ${error.message}`);
-      console.error(stderr);
-    } else {
-      console.log(`[AUTO-REFRESH] Auto-scraping completed: ${stdout.trim()}`);
-    }
-  });
-}, AUTO_REFRESH_INTERVAL);
-
 app.listen(PORT, () => {
   console.log(`[INFO] Server running on port ${PORT}`);
   console.log(`[INFO] Client proxy endpoints are active.`);
-  console.log(`[INFO] Auto-refresh playlist enabled (every 30 minutes).`);
 });
 

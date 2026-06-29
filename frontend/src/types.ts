@@ -14,3 +14,18 @@ export interface PlayerStats {
   bufferLength: number;
   bandwidth: string;
 }
+
+export interface SportEvent {
+  event: string;
+  tournament: string;
+  time: string;
+  start: string;
+  end: string;
+  status: string;
+  channels: Channel[];
+}
+
+export interface EventsResponse {
+  success: boolean;
+  categories: Record<string, SportEvent[]>;
+}
