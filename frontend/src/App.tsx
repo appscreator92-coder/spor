@@ -48,6 +48,31 @@ function getChannelInitials(name: string): string {
   return (parts[0][0] + parts[1][0]).toUpperCase();
 }
 
+const ChannelLogo = ({ channel }: { channel: Channel }) => {
+  const [imgError, setImgError] = React.useState(false);
+
+  if (channel.logo && !imgError) {
+    return (
+      <img
+        src={channel.logo}
+        alt={channel.name}
+        className="channel-logo-placeholder"
+        style={{ objectFit: 'contain', background: 'rgba(255, 255, 255, 0.03)', padding: '4px' }}
+        onError={() => setImgError(true)}
+      />
+    );
+  }
+
+  return (
+    <div
+      className="channel-logo-placeholder"
+      style={{ background: getChannelGradient(channel.name) }}
+    >
+      {getChannelInitials(channel.name)}
+    </div>
+  );
+};
+
 export default function App() {
   const [channels, setChannels] = useState<Channel[]>([]);
   const [selectedChannel, setSelectedChannel] = useState<Channel | null>(null);
@@ -581,13 +606,7 @@ export default function App() {
                   onClick={() => setSelectedChannel(ch)}
                 >
                   <div className="card-content-wrapper">
-                    {/* Logo container with unique gradient */}
-                    <div
-                      className="channel-logo-placeholder"
-                      style={{ background: getChannelGradient(ch.name) }}
-                    >
-                      {getChannelInitials(ch.name)}
-                    </div>
+                    <ChannelLogo channel={ch} />
                     
                     <div className="channel-info">
                       <span className="channel-name" title={ch.name}>{ch.name}</span>
