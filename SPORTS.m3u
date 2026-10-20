@@ -1,7 +1,22 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-name="9:00 PM EDT UFC 330: Multiview UFC 8/15" group-title="Sports",9:00 PM EDT UFC 330: Multiview UFC 8/15
+#EXTINF:-1 tvg-name="Golf Channel HD US" tvg-logo="https://www.sms.cz/kategorie/televize/bmp/loga/velka/golfchannel.png" group-title="Sports",Golf Channel HD US
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
 #EXTVLCOPT:http-referrer=https://cdnlivetv.tv/
-https://cdnlivetv.tv/secure/api/v1/6a8143d52d4a99e0738923d4/playlist.m3u8?token=NmE4MTQzZDUyZDRhOTllMDczODkyM2Q0OjE3OTI0NzA2Mzg3NDI6Y2RubGl2ZXR2LnR2OjExNzUyNWEwYTYxOTA2NzEuYWE5Nzg3YWZjMTlkZTM0NjY3Y2JlNjg5MjFhODU1NDE2ZjNhZWViNDY1MTg2NjI3YTg4NGJhOTAwNjQ4YjMzYw
+https://cdnlivetv.tv/secure/api/v1/6a288d2881d8192bb76cb5cd/playlist.m3u8?token=NmEyODhkMjg4MWQ4MTkyYmI3NmNiNWNkOjE3OTI1MDgzNTU5NjU6Y2RubGl2ZXR2LnR2OjQwZmMyMzMwOTY0NDEyNGYuMGJmZWU5NWE2ZDJkNmYyOWQ5NDA3MmZkN2MxNmQ3NGFiMmEyMDA3ZTBhZDA4ZTc4ZmZjYjczZDZiZDNiYWNhYg
+
+#EXTINF:-1 tvg-name="Golf+ HD FR" tvg-logo="https://i.imgur.com/WHnddkg.png" group-title="Sports",Golf+ HD FR
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://cdnlivetv.tv/
+https://cdnlivetv.tv/secure/api/v1/6a288d2c81d8192bb76cd201/playlist.m3u8?token=NmEyODhkMmM4MWQ4MTkyYmI3NmNkMjAxOjE3OTI1MDgzNTU5NzE6Y2RubGl2ZXR2LnR2OjJiYWUyMzA2MDE4YWUxMDMuZjI4ZGIwODQ4ZjRkYTk0YjNmZmUyYzZjOTYwZWNiYTAzOThlNGIzNzFlYjQ0OTc4OGZjMWY2ZWJhNDQyMGZiYQ
+
+#EXTINF:-1 tvg-name="Premiere 3 HD BR" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Sky_Cinema_Premieren_DE_Logo_2020.svg/960px-Sky_Cinema_Premieren_DE_Logo_2020.svg.png" group-title="Sports",Premiere 3 HD BR
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://cdnlivetv.tv/
+https://cdnlivetv.tv/secure/api/v1/6a288d2e81d8192bb76ce760/playlist.m3u8?token=NmEyODhkMmU4MWQ4MTkyYmI3NmNlNzYwOjE3OTI1MDgzNTU5NzM6Y2RubGl2ZXR2LnR2OjFiOWI5Zjg1YWY2NjhhMzMuZmMzOThiN2VlNGE4ZmRhNGYzY2Y4NjgwOTA5MmZhNjI1MzMzYWI3NWQ1YmQxZmUyYWU2NjAzMzk3ZWFkZTJiMA
+
+#EXTINF:-1 tvg-name="Premiere 6 HD BR" group-title="Sports",Premiere 6 HD BR
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36
+#EXTVLCOPT:http-referrer=https://cdnlivetv.tv/
+https://cdnlivetv.tv/secure/api/v1/6a288d2e81d8192bb76ce763/playlist.m3u8?token=NmEyODhkMmU4MWQ4MTkyYmI3NmNlNzYzOjE3OTI1MDgzNTU5Njc6Y2RubGl2ZXR2LnR2OjgyYTA2YzAyOGJjMTgwMDYuYjQ0OWVjMWM0ODgxOGMxNzVjOWIzYjQxODU0NDkyYjg1Y2M4ZTIzMThjODdhNTVlZmMyMGI2YWZhNTQ3MzQyMQ
 
